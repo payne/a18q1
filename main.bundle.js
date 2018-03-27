@@ -34,9 +34,10 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ui_user_login_user_login_component__ = __webpack_require__("../../../../../src/app/ui/user-login/user-login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__items_items_list_items_list_component__ = __webpack_require__("../../../../../src/app/items/items-list/items-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ui_readme_page_readme_page_component__ = __webpack_require__("../../../../../src/app/ui/readme-page/readme-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__notes_notes_list_notes_list_component__ = __webpack_require__("../../../../../src/app/notes/notes-list/notes-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_auth_guard__ = __webpack_require__("../../../../../src/app/core/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__markdowns_markdowns_list_markdowns_list_component__ = __webpack_require__("../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ui_readme_page_readme_page_component__ = __webpack_require__("../../../../../src/app/ui/readme-page/readme-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__notes_notes_list_notes_list_component__ = __webpack_require__("../../../../../src/app/notes/notes-list/notes-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_auth_guard__ = __webpack_require__("../../../../../src/app/core/auth.guard.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -50,22 +51,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_4__ui_readme_page_readme_page_component__["a" /* ReadmePageComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_5__ui_readme_page_readme_page_component__["a" /* ReadmePageComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__ui_user_login_user_login_component__["a" /* UserLoginComponent */] },
-    { path: 'items', component: __WEBPACK_IMPORTED_MODULE_3__items_items_list_items_list_component__["a" /* ItemsListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__core_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'notes', component: __WEBPACK_IMPORTED_MODULE_5__notes_notes_list_notes_list_component__["a" /* NotesListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__core_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'items', component: __WEBPACK_IMPORTED_MODULE_3__items_items_list_items_list_component__["a" /* ItemsListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__core_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'markdown', component: __WEBPACK_IMPORTED_MODULE_4__markdowns_markdowns_list_markdowns_list_component__["a" /* MarkdownsListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__core_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'notes', component: __WEBPACK_IMPORTED_MODULE_6__notes_notes_list_notes_list_component__["a" /* NotesListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__core_auth_guard__["a" /* AuthGuard */]] },
     // uploads are lazy loaded
-    { path: 'uploads', loadChildren: './uploads/shared/upload.module#UploadModule', canActivate: [__WEBPACK_IMPORTED_MODULE_6__core_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'uploads', loadChildren: './uploads/shared/upload.module#UploadModule', canActivate: [__WEBPACK_IMPORTED_MODULE_7__core_auth_guard__["a" /* AuthGuard */]] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */].forRoot(routes)],
             exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */]],
-            providers: [__WEBPACK_IMPORTED_MODULE_6__core_auth_guard__["a" /* AuthGuard */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_7__core_auth_guard__["a" /* AuthGuard */]],
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -78,7 +81,7 @@ var AppRoutingModule = (function () {
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"wrapper\">\n  <top-nav></top-nav>\n\n  <div class=\"content columns\">\n    <aside class=\"column is-2 is-offset-1\">\n      <user-profile></user-profile>\n    </aside>\n\n    <main class=\"column is-8\">\n      <notification-message></notification-message>\n\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n\n  <div class=\"github-banner\">\n    <a href=\"https://github.com/codediodeio/angular-firestarter\" class=\"github-corner\" aria-label=\"View source on Github\">\n      <svg width=\"60\" height=\"60\" viewBox=\"0 0 250 250\" style=\"z-index: 11; fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;\" aria-hidden=\"true\"><path d=\"M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z\"></path><path d=\"M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2\" fill=\"currentColor\" style=\"transform-origin: 130px 106px;\" class=\"octo-arm\"></path><path d=\"M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z\" fill=\"currentColor\" class=\"octo-body\"></path>\n      </svg>\n    </a>\n    <style>\n      .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}\n    </style>\n  </div>\n</div>\n"
+module.exports = "<div id=\"wrapper\">\n  <top-nav></top-nav>\n\n  <div class=\"content columns\">\n    <aside class=\"column is-2 is-offset-1\">\n      <user-profile></user-profile>\n    </aside>\n\n    <main class=\"column is-8\">\n      <notification-message></notification-message>\n\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n\n  <div class=\"github-banner\">\n    <a href=\"https://github.com/payne/angular-firestarter\" class=\"github-corner\" aria-label=\"View source on Github\">\n      <svg width=\"60\" height=\"60\" viewBox=\"0 0 250 250\" style=\"z-index: 11; fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;\" aria-hidden=\"true\"><path d=\"M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z\"></path><path d=\"M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2\" fill=\"currentColor\" style=\"transform-origin: 130px 106px;\" class=\"octo-arm\"></path><path d=\"M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z\" fill=\"currentColor\" class=\"octo-body\"></path>\n      </svg>\n    </a>\n    <style>\n      .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}\n    </style>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -117,7 +120,7 @@ var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.scss")],
@@ -144,10 +147,11 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__ = __webpack_require__("../../../../../src/app/shared/shared.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__items_shared_item_module__ = __webpack_require__("../../../../../src/app/items/shared/item.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ui_shared_ui_module__ = __webpack_require__("../../../../../src/app/ui/shared/ui.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__notes_notes_module__ = __webpack_require__("../../../../../src/app/notes/notes.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__markdowns_shared_markdown_module__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ui_shared_ui_module__ = __webpack_require__("../../../../../src/app/ui/shared/ui.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__notes_notes_module__ = __webpack_require__("../../../../../src/app/notes/notes.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -168,28 +172,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 ///// End FireStarter
 
 
-var firebaseConfig = __WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebaseConfig;
+var firebaseConfig = __WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].firebaseConfig;
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_5__core_core_module__["a" /* CoreModule */],
                 __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_7__items_shared_item_module__["a" /* ItemModule */],
-                __WEBPACK_IMPORTED_MODULE_8__ui_shared_ui_module__["a" /* UiModule */],
-                __WEBPACK_IMPORTED_MODULE_9__notes_notes_module__["a" /* NotesModule */],
-                __WEBPACK_IMPORTED_MODULE_11_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig),
+                __WEBPACK_IMPORTED_MODULE_8__markdowns_shared_markdown_module__["a" /* MarkdownModule */],
+                __WEBPACK_IMPORTED_MODULE_9__ui_shared_ui_module__["a" /* UiModule */],
+                __WEBPACK_IMPORTED_MODULE_10__notes_notes_module__["a" /* NotesModule */],
+                __WEBPACK_IMPORTED_MODULE_12_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig),
             ],
             bootstrap: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
@@ -235,7 +241,7 @@ var AuthGuard = (function () {
     }
     AuthGuard.prototype.canActivate = function (next, state) {
         var _this = this;
-        return this.auth.user.pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["b" /* take */])(1), Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["a" /* map */])(function (user) { return !!user; }), Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["c" /* tap */])(function (loggedIn) {
+        return this.auth.user.pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["take"])(1), Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (user) { return !!user; }), Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["tap"])(function (loggedIn) {
             if (!loggedIn) {
                 console.log('access denied');
                 _this.notify.update('You must be logged in!', 'error');
@@ -244,7 +250,7 @@ var AuthGuard = (function () {
         }));
     };
     AuthGuard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_3__notify_service__["a" /* NotifyService */]])
     ], AuthGuard);
     return AuthGuard;
@@ -390,7 +396,7 @@ var AuthService = (function () {
         return userRef.set(data);
     };
     AuthService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */],
             __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__["a" /* AngularFirestore */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
@@ -428,7 +434,7 @@ var CoreModule = (function () {
     function CoreModule() {
     }
     CoreModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["b" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__["b" /* AngularFirestoreModule */],
@@ -471,7 +477,7 @@ var NotifyService = (function () {
         this._msgSource.next(null);
     };
     NotifyService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
     ], NotifyService);
     return NotifyService;
 }());
@@ -540,11 +546,11 @@ var ItemDetailComponent = (function () {
         this.itemSvc.deleteItem(this.item.$key);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__shared_item__["a" /* Item */])
     ], ItemDetailComponent.prototype, "item", void 0);
     ItemDetailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'item-detail',
             template: __webpack_require__("../../../../../src/app/items/item-detail/item-detail.component.html"),
             styles: [__webpack_require__("../../../../../src/app/items/item-detail/item-detail.component.scss")]
@@ -613,7 +619,7 @@ var ItemFormComponent = (function () {
         this.item = new __WEBPACK_IMPORTED_MODULE_1__shared_item__["a" /* Item */](); // reset item
     };
     ItemFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'item-form',
             template: __webpack_require__("../../../../../src/app/items/item-form/item-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/items/item-form/item-form.component.scss")],
@@ -630,7 +636,7 @@ var ItemFormComponent = (function () {
 /***/ "../../../../../src/app/items/items-list/items-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Items</h1>\n\n<p>This page is a demo of a very basic todo list in Angular, using the Firebase Realtime DB on the backend.</p>\n\n<div *ngFor=\"let item of items | async\" class=\"card\">\n  <item-detail [item]='item'></item-detail>\n</div>\n\n<loading-spinner *ngIf=\"showSpinner\"></loading-spinner>\n\n<button type=\"button\" class=\"button is-danger\" (click)='deleteItems()'>Delete Entire List</button>\n\n<hr>\n\n<item-form></item-form>\n"
+module.exports = "<h1>Items</h1>\n\n<p>This page is a demo of a very basic todo list in Angular, using the Firebase Realtime DB on the backend.</p>\n\n<div>\n  <ngx-datatable\n     [rows]=\"rows\"\n     [columns]=\"columns\">\n  </ngx-datatable>\n</div>\n\n<div *ngFor=\"let item of items | async\" class=\"card\">\n  <item-detail [item]='item'></item-detail>\n</div>\n\n<loading-spinner *ngIf=\"showSpinner\"></loading-spinner>\n\n<button type=\"button\" class=\"button is-danger\" (click)='deleteItems()'>Delete Entire List</button>\n\n<hr>\n\n<item-form></item-form>\n"
 
 /***/ }),
 
@@ -673,6 +679,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ItemsListComponent = (function () {
     function ItemsListComponent(itemService) {
         this.itemService = itemService;
+        this.rows = [
+            { name: 'Austin', gender: 'Male', company: 'Swimlane' },
+            { name: 'Dany', gender: 'Male', company: 'KFC' },
+            { name: 'Molly', gender: 'Female', company: 'Burger King' },
+        ];
+        this.columns = [
+            { prop: 'name' },
+            { name: 'Gender' },
+            { name: 'Company' }
+        ];
         this.showSpinner = true;
         this.items = this.itemService.getItemsList();
     }
@@ -686,7 +702,7 @@ var ItemsListComponent = (function () {
         this.itemService.deleteAll();
     };
     ItemsListComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'items-list',
             template: __webpack_require__("../../../../../src/app/items/items-list/items-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/items/items-list/items-list.component.scss")],
@@ -710,10 +726,12 @@ var ItemsListComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__("../../../../../src/app/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__item_service__ = __webpack_require__("../../../../../src/app/items/shared/item.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__items_list_items_list_component__ = __webpack_require__("../../../../../src/app/items/items-list/items-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__item_form_item_form_component__ = __webpack_require__("../../../../../src/app/items/item-form/item-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__item_detail_item_detail_component__ = __webpack_require__("../../../../../src/app/items/item-detail/item-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__swimlane_ngx_datatable__ = __webpack_require__("../../../../@swimlane/ngx-datatable/release/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__swimlane_ngx_datatable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__swimlane_ngx_datatable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__item_service__ = __webpack_require__("../../../../../src/app/items/shared/item.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__items_list_items_list_component__ = __webpack_require__("../../../../../src/app/items/items-list/items-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__item_form_item_form_component__ = __webpack_require__("../../../../../src/app/items/item-form/item-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail_component__ = __webpack_require__("../../../../../src/app/items/item-detail/item-detail.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -729,25 +747,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var ItemModule = (function () {
     function ItemModule() {
     }
     ItemModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_5__swimlane_ngx_datatable__["NgxDatatableModule"],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["b" /* AngularFireDatabaseModule */],
             ],
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__items_list_items_list_component__["a" /* ItemsListComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__item_form_item_form_component__["a" /* ItemFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__item_detail_item_detail_component__["a" /* ItemDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__items_list_items_list_component__["a" /* ItemsListComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__item_form_item_form_component__["a" /* ItemFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__item_detail_item_detail_component__["a" /* ItemDetailComponent */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_5__item_service__["a" /* ItemService */],
+                __WEBPACK_IMPORTED_MODULE_6__item_service__["a" /* ItemService */],
             ],
         })
     ], ItemModule);
@@ -815,7 +835,7 @@ var ItemService = (function () {
         console.error(error);
     };
     ItemService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
     ], ItemService);
     return ItemService;
@@ -835,6 +855,367 @@ var Item = (function () {
         this.active = true;
     }
     return Item;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h3 [ngClass]=\"{ 'strike-out': !markdown.active }\">\n  {{ markdown.title || 'missing title' }}\n</h3>\n\n<div class=\"card-content\">\n  Task Active?: {{ markdown.active }}<br>\n  {{ markdown.timeStamp | date: 'medium' }}\n</div>\n\n<div class=\"card-footer\">\n  <span class=\"button is-small is-info card-footer-markdown\" (click)='updateTimeStamp()'>Update Timestamp</span>\n  <span class=\"button is-small is-success card-footer-markdown\" *ngIf='markdown.active' (click)='updateActive(false)'>Mark Complete</span>\n  <span class=\"button is-small is-warning card-footer-markdown\" *ngIf='!markdown.active' (click)='updateActive(true)'>Mark Incomplete</span>\n  <span class=\"button is-small is-danger card-footer-markdown\" (click)='deleteMarkdown()'>Delete</span>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button {\n  border-radius: 0;\n  margin: 10px 5px;\n  text-transform: uppercase;\n  font-weight: bold; }\n\n.strike-out {\n  text-decoration: line-through;\n  color: darkred; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_markdown_service__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_markdown__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MarkdownDetailComponent = (function () {
+    function MarkdownDetailComponent(markdownSvc) {
+        this.markdownSvc = markdownSvc;
+    }
+    MarkdownDetailComponent.prototype.updateTimeStamp = function () {
+        var date = new Date().getTime();
+        this.markdownSvc.updateMarkdown(this.markdown.$key, { timeStamp: date });
+    };
+    MarkdownDetailComponent.prototype.updateActive = function (value) {
+        this.markdownSvc.updateMarkdown(this.markdown.$key, { active: value });
+    };
+    MarkdownDetailComponent.prototype.deleteMarkdown = function () {
+        this.markdownSvc.deleteMarkdown(this.markdown.$key);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__shared_markdown__["a" /* Markdown */])
+    ], MarkdownDetailComponent.prototype, "markdown", void 0);
+    MarkdownDetailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'markdown-detail',
+            template: __webpack_require__("../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_markdown_service__["a" /* MarkdownService */]])
+    ], MarkdownDetailComponent);
+    return MarkdownDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-form/markdown-form.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h3>New Task Form</h3>\n\n<label class=\"label\">Name: </label>\n\n<input placeholder=\"Markdown Title\" class=\"input\"\n[(ngModel)]=\"markdown.title\"\nrequired minlength=\"2\" maxlength=\"23\"\n#title='ngModel' autofocus>\n\n<div *ngIf=\"title.dirty\">\n  <span *ngIf='title.errors; then errors else valid'>template renders here...</span>\n</div>\n\n<button class=\"button is-primary\" (click)='createMarkdown()' [disabled]=\"!title.valid\">Create</button>\n\n<ng-template #valid>\n  <p class=\"help is-success\">looks good!</p>\n</ng-template>\n\n<ng-template #errors>\n  <p class=\"help is-danger\">form contains errors!</p>\n</ng-template>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-form/markdown-form.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdown-form/markdown-form.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownFormComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_markdown__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_markdown_service__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MarkdownFormComponent = (function () {
+    function MarkdownFormComponent(markdownSvc) {
+        this.markdownSvc = markdownSvc;
+        this.markdown = new __WEBPACK_IMPORTED_MODULE_1__shared_markdown__["a" /* Markdown */]();
+    }
+    MarkdownFormComponent.prototype.createMarkdown = function () {
+        this.markdownSvc.createMarkdown(this.markdown);
+        this.markdown = new __WEBPACK_IMPORTED_MODULE_1__shared_markdown__["a" /* Markdown */](); // reset markdown
+    };
+    MarkdownFormComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'markdown-form',
+            template: __webpack_require__("../../../../../src/app/markdowns/markdown-form/markdown-form.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/markdowns/markdown-form/markdown-form.component.scss")],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_markdown_service__["a" /* MarkdownService */]])
+    ], MarkdownFormComponent);
+    return MarkdownFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Markdowns</h1>\n\n<p>This page is a demo of a very basic todo list in Angular, using the Firebase Realtime DB on the backend.</p>\n\n<div *ngFor=\"let markdown of markdowns | async\" class=\"card\">\n  <markdown-detail [markdown]='markdown'></markdown-detail>\n</div>\n\n<loading-spinner *ngIf=\"showSpinner\"></loading-spinner>\n\n<button type=\"button\" class=\"button is-danger\" (click)='deleteMarkdowns()'>Delete Entire List</button>\n\n<hr>\n\n<markdown-form></markdown-form>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card {\n  margin-bottom: 10px;\n  padding: 10px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownsListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_markdown_service__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MarkdownsListComponent = (function () {
+    function MarkdownsListComponent(markdownService) {
+        this.markdownService = markdownService;
+        this.showSpinner = true;
+        this.markdowns = this.markdownService.getMarkdownsList();
+    }
+    MarkdownsListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.markdowns.subscribe(function (x) {
+            _this.showSpinner = false;
+        });
+    };
+    MarkdownsListComponent.prototype.deleteMarkdowns = function () {
+        this.markdownService.deleteAll();
+    };
+    MarkdownsListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'markdowns-list',
+            template: __webpack_require__("../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.scss")],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_markdown_service__["a" /* MarkdownService */]])
+    ], MarkdownsListComponent);
+    return MarkdownsListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/shared/markdown.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__ = __webpack_require__("../../../../../src/app/shared/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__markdown_service__ = __webpack_require__("../../../../../src/app/markdowns/shared/markdown.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__markdowns_list_markdowns_list_component__ = __webpack_require__("../../../../../src/app/markdowns/markdowns-list/markdowns-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__markdown_form_markdown_form_component__ = __webpack_require__("../../../../../src/app/markdowns/markdown-form/markdown-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__markdown_detail_markdown_detail_component__ = __webpack_require__("../../../../../src/app/markdowns/markdown-detail/markdown-detail.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+var MarkdownModule = (function () {
+    function MarkdownModule() {
+    }
+    MarkdownModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_4__shared_shared_module__["a" /* SharedModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_6__markdowns_list_markdowns_list_component__["a" /* MarkdownsListComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__markdown_form_markdown_form_component__["a" /* MarkdownFormComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__markdown_detail_markdown_detail_component__["a" /* MarkdownDetailComponent */],
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_5__markdown_service__["a" /* MarkdownService */],
+            ],
+        })
+    ], MarkdownModule);
+    return MarkdownModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/shared/markdown.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MarkdownService = (function () {
+    function MarkdownService(db) {
+        this.db = db;
+        this.basePath = '/markdowns';
+        this.markdownsRef = db.list('/markdowns');
+    }
+    // Return an observable list of Markdowns
+    MarkdownService.prototype.getMarkdownsList = function () {
+        return this.markdownsRef.snapshotChanges().map(function (arr) {
+            return arr.map(function (snap) { return Object.assign(snap.payload.val(), { $key: snap.key }); });
+        });
+    };
+    // Return a single observable markdown
+    MarkdownService.prototype.getMarkdown = function (key) {
+        var markdownPath = this.basePath + "/" + key;
+        var markdown = this.db.object(markdownPath).valueChanges();
+        return markdown;
+    };
+    // Create a brand new markdown
+    MarkdownService.prototype.createMarkdown = function (markdown) {
+        this.markdownsRef.push(markdown);
+    };
+    // Update an exisiting markdown
+    MarkdownService.prototype.updateMarkdown = function (key, value) {
+        this.markdownsRef.update(key, value);
+    };
+    // Deletes a single markdown
+    MarkdownService.prototype.deleteMarkdown = function (key) {
+        this.markdownsRef.remove(key);
+    };
+    // Deletes the entire list of markdowns
+    MarkdownService.prototype.deleteAll = function () {
+        this.markdownsRef.remove();
+    };
+    // Default error handling for all actions
+    MarkdownService.prototype.handleError = function (error) {
+        console.error(error);
+    };
+    MarkdownService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
+    ], MarkdownService);
+    return MarkdownService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdowns/shared/markdown.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Markdown; });
+var Markdown = (function () {
+    function Markdown() {
+        this.active = true;
+    }
+    return Markdown;
 }());
 
 
@@ -900,11 +1281,11 @@ var NoteDetailComponent = (function () {
         this.noteService.deleteNote(id);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], NoteDetailComponent.prototype, "note", void 0);
     NoteDetailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'note-detail',
             template: __webpack_require__("../../../../../src/app/notes/note-detail/note-detail.component.html"),
             styles: [__webpack_require__("../../../../../src/app/notes/note-detail/note-detail.component.scss")],
@@ -971,7 +1352,7 @@ var NoteService = (function () {
         return this.getNote(id).delete();
     };
     NoteService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], NoteService);
     return NoteService;
@@ -1037,7 +1418,7 @@ var NotesListComponent = (function () {
         this.content = '';
     };
     NotesListComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'notes-list',
             template: __webpack_require__("../../../../../src/app/notes/notes-list/notes-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/notes/notes-list/notes-list.component.scss")],
@@ -1082,9 +1463,9 @@ var NotesModule = (function () {
     function NotesModule() {
     }
     NotesModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["b" /* AngularFirestoreModule */].enablePersistence(),
@@ -1124,9 +1505,9 @@ var SharedModule = (function () {
     function SharedModule() {
     }
     SharedModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__ui_loading_spinner_loading_spinner_component__["a" /* LoadingSpinnerComponent */],
@@ -1185,7 +1566,7 @@ var FooterNavComponent = (function () {
     function FooterNavComponent() {
     }
     FooterNavComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'footer-nav',
             template: __webpack_require__("../../../../../src/app/ui/footer-nav/footer-nav.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/footer-nav/footer-nav.component.scss")],
@@ -1240,7 +1621,7 @@ var LoadingSpinnerComponent = (function () {
     function LoadingSpinnerComponent() {
     }
     LoadingSpinnerComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'loading-spinner',
             template: __webpack_require__("../../../../../src/app/ui/loading-spinner/loading-spinner.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/loading-spinner/loading-spinner.component.scss")],
@@ -1301,11 +1682,11 @@ var NotificationMessageComponent = (function () {
         this.notify = notify;
     }
     NotificationMessageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'notification-message',
             template: __webpack_require__("../../../../../src/app/ui/notification-message/notification-message.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/notification-message/notification-message.component.scss")],
-            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None,
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__core_notify_service__["a" /* NotifyService */]])
     ], NotificationMessageComponent);
@@ -1358,7 +1739,7 @@ var ReadmePageComponent = (function () {
     function ReadmePageComponent() {
     }
     ReadmePageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'readme-page',
             template: __webpack_require__("../../../../../src/app/ui/readme-page/readme-page.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/readme-page/readme-page.component.scss")],
@@ -1412,9 +1793,9 @@ var UiModule = (function () {
     function UiModule() {
     }
     UiModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_5__shared_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
@@ -1448,7 +1829,7 @@ var UiModule = (function () {
 /***/ "../../../../../src/app/ui/top-nav/top-nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"nav\">\n  <div class=\"nav-left\">\n    <a class=\"nav-item logo\" routerLink=\"/\">\n      <img src=\"assets/images/angularfirebase.png\" width=\"30px\" alt=\"Firestarter Angular4 Demo App\"/> FireStarter\n    </a>\n  </div>\n\n  <!-- This \"nav-toggle\" hamburger menu is only visible on mobile -->\n  <!-- You need JavaScript to toggle the \"is-active\" class on \"nav-menu\" -->\n  <span class=\"nav-toggle\" (click)=\"toggleCollapse()\" [ngClass]=\"{'is-active': show}\">\n    <span></span>\n    <span></span>\n    <span></span>\n  </span>\n\n  <!-- This \"nav-menu\" is hidden on mobile -->\n  <!-- Add the modifier \"is-active\" to display it on mobile -->\n  <div class=\"nav-right nav-menu\" [ngClass]=\"{'is-active': show}\">\n    <a class=\"nav-item\" routerLink=\"/login\">\n      Login\n    </a>\n    <a class=\"nav-item\" routerLink=\"/notes\">\n      Firestore\n    </a>\n    <a class=\"nav-item\" routerLink=\"/items\">\n      Realtime DB\n    </a>\n    <a class=\"nav-item\" routerLink=\"/uploads\">\n      File Uploads\n    </a>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"nav\">\n  <div class=\"nav-left\">\n    <a class=\"nav-item logo\" routerLink=\"/\">\n      <img src=\"assets/images/angularfirebase.png\" width=\"30px\" alt=\"Firestarter Angular4 Demo App\"/> FireStarter\n    </a>\n  </div>\n\n  <!-- This \"nav-toggle\" hamburger menu is only visible on mobile -->\n  <!-- You need JavaScript to toggle the \"is-active\" class on \"nav-menu\" -->\n  <span class=\"nav-toggle\" (click)=\"toggleCollapse()\" [ngClass]=\"{'is-active': show}\">\n    <span></span>\n    <span></span>\n    <span></span>\n  </span>\n\n  <!-- This \"nav-menu\" is hidden on mobile -->\n  <!-- Add the modifier \"is-active\" to display it on mobile -->\n  <div class=\"nav-right nav-menu\" [ngClass]=\"{'is-active': show}\">\n    <a class=\"nav-item\" routerLink=\"/login\">\n      Login\n    </a>\n    <a class=\"nav-item\" routerLink=\"/notes\">\n      Firestore\n    </a>\n    <a class=\"nav-item\" routerLink=\"/items\">\n      Realtime DB\n    </a>\n    <a class=\"nav-item\" routerLink=\"/markdown\">\n      Markdown\n    </a>\n    <a class=\"nav-item\" routerLink=\"/uploads\">\n      File Uploads\n    </a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1491,7 +1872,7 @@ var TopNavComponent = (function () {
         this.show = !this.show;
     };
     TopNavComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'top-nav',
             template: __webpack_require__("../../../../../src/app/ui/top-nav/top-nav.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/top-nav/top-nav.component.scss")],
@@ -1630,7 +2011,7 @@ var UserFormComponent = (function () {
         }
     };
     UserFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'user-form',
             template: __webpack_require__("../../../../../src/app/ui/user-form/user-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/user-form/user-form.component.scss")],
@@ -1727,7 +2108,7 @@ var UserLoginComponent = (function () {
         this.router.navigate(['/']);
     };
     UserLoginComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'user-login',
             template: __webpack_require__("../../../../../src/app/ui/user-login/user-login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/user-login/user-login.component.scss")],
@@ -1793,7 +2174,7 @@ var UserProfileComponent = (function () {
         this.auth.signOut();
     };
     UserProfileComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'user-profile',
             template: __webpack_require__("../../../../../src/app/ui/user-profile/user-profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/ui/user-profile/user-profile.component.scss")],
@@ -1841,7 +2222,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 

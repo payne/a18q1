@@ -37,9 +37,9 @@ var UploadModule = (function () {
     function UploadModule() {
     }
     UploadModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
                 __WEBPACK_IMPORTED_MODULE_3__shared_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["b" /* AngularFireDatabaseModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forChild(routes),
@@ -153,7 +153,7 @@ var UploadService = (function () {
         storageRef.child(this.basePath + "/" + name).delete();
     };
     UploadService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
     ], UploadService);
     return UploadService;
@@ -233,11 +233,11 @@ var UploadDetailComponent = (function () {
         this.upSvc.deleteUpload(this.upload);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__shared_upload__["a" /* Upload */])
     ], UploadDetailComponent.prototype, "upload", void 0);
     UploadDetailComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'upload-detail',
             template: __webpack_require__("../../../../../src/app/uploads/upload-detail/upload-detail.component.html"),
             styles: [__webpack_require__("../../../../../src/app/uploads/upload-detail/upload-detail.component.scss")],
@@ -326,7 +326,7 @@ var UploadFormComponent = (function () {
         });
     };
     UploadFormComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'upload-form',
             template: __webpack_require__("../../../../../src/app/uploads/upload-form/upload-form.component.html"),
             styles: [__webpack_require__("../../../../../src/app/uploads/upload-form/upload-form.component.scss")],
@@ -394,7 +394,7 @@ var UploadsListComponent = (function () {
         this.uploads.subscribe(function () { return _this.showSpinner = false; });
     };
     UploadsListComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'uploads-list',
             template: __webpack_require__("../../../../../src/app/uploads/uploads-list/uploads-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/uploads/uploads-list/uploads-list.component.scss")],
