@@ -1700,7 +1700,7 @@ var NotificationMessageComponent = (function () {
 /***/ "../../../../../src/app/ui/readme-page/readme-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Welcome to Firestarter!</h1>\n\n<p>I am a Progressive Web App (PWA) built with Angular and Firebase.</p>\n\n<h2>Have Questions?</h2>\n\n<p>\n  <i class=\"fa fa-slack fa-lg\"></i> Let's talk on the <a target=\"blank\" href=\"https://join.slack.com/t/angularfirebase/shared_invite/enQtMjU2OTU5OTMyODM3LWU4YTZiMGFhZjJhYmEwYzI1MWFmYTgyMWRmOTI5NWZjYWE3NTMwZjFmNWMwZGI1MmMzODQ3OTFlZjFkMjc5N2Y\">\n  Angular Firebase Developers Slack Team\n</a>\n</p>\n\n<h2>Free Open Source Screencasts</h2>\n\n<p>\n  <i class=\"fa fa-youtube fa-lg\"></i>\n  Subscribe to the <a href=\"https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA\">AngularFirebase YouTube Channel</a> for weekly lessons.\n</p>\n"
+module.exports = "<h1>Welcome to Firestarter!</h1>\n\n<p>I am a Progressive Web App (PWA) built with Angular and Firebase.</p>\n\n<h2>Have Questions?</h2>\n\n<p>\n  <i class=\"fa fa-slack fa-lg\"></i> Let's talk on the <a target=\"blank\" href=\"https://join.slack.com/t/angularfirebase/shared_invite/enQtMjU2OTU5OTMyODM3LWU4YTZiMGFhZjJhYmEwYzI1MWFmYTgyMWRmOTI5NWZjYWE3NTMwZjFmNWMwZGI1MmMzODQ3OTFlZjFkMjc5N2Y\">\n  Angular Firebase Developers Slack Team\n</a>\n</p>\n\n<h2>Free Open Source Screencasts</h2>\n\n<p>\n  <i class=\"fa fa-youtube fa-lg\"></i>\n  Subscribe to the <a href=\"https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA\">AngularFirebase YouTube Channel</a> for weekly lessons.\n</p>\n\n<!-- this creates a google map on the page with the given lat/lng from -->\n<!-- the component as the initial center of the map: -->\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t\t  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map>\n\n"
 
 /***/ }),
 
@@ -1712,7 +1712,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "agm-map {\n  height: 300px; }\n", ""]);
 
 // exports
 
@@ -1737,6 +1737,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var ReadmePageComponent = (function () {
     function ReadmePageComponent() {
+        this.lat = 51.678418;
+        this.lng = 7.809007;
     }
     ReadmePageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1770,12 +1772,14 @@ var ReadmePageComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__footer_nav_footer_nav_component__ = __webpack_require__("../../../../../src/app/ui/footer-nav/footer-nav.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__readme_page_readme_page_component__ = __webpack_require__("../../../../../src/app/ui/readme-page/readme-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__notification_message_notification_message_component__ = __webpack_require__("../../../../../src/app/ui/notification-message/notification-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1801,6 +1805,9 @@ var UiModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_13__agm_core__["a" /* AgmCoreModule */].forRoot({
+                    apiKey: 'AIzaSyDdRgDvSt-mWg6pr50AWXEDvE5_In5TPD8',
+                }),
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_6__user_login_user_login_component__["a" /* UserLoginComponent */],
