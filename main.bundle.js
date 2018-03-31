@@ -1737,8 +1737,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var ReadmePageComponent = (function () {
     function ReadmePageComponent() {
-        this.lat = 51.678418;
-        this.lng = 7.809007;
+        this.lat = 41.258122;
+        this.lng = -96.010712;
     }
     ReadmePageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
